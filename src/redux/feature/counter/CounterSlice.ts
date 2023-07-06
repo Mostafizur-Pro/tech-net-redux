@@ -17,4 +17,5 @@ const couterSlice = createSlice({
   },
 });
 
+export const { increment, decrement } = couterSlice.actions;
 export default couterSlice.reducer;
