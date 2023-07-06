@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = {
   count: 0,
@@ -14,8 +15,11 @@ const couterSlice = createSlice({
     decrement: (state) => {
       state.count = state.count - 1;
     },
+    incrementByAmount: (state, action: PayloadAction<number>) => {
+      state.count += action.payload;
+    },
   },
 });
 
-export const { increment, decrement } = couterSlice.actions;
+export const { increment, decrement, incrementByAmount } = couterSlice.actions;
 export default couterSlice.reducer;

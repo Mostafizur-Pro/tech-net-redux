@@ -1,4 +1,8 @@
-import { decrement, increment } from "./redux/feature/counter/CounterSlice";
+import {
+  decrement,
+  increment,
+  incrementByAmount,
+} from "./redux/feature/counter/CounterSlice";
 import { RootState } from "./redux/store";
 import { useSelector, useDispatch } from "react-redux";
 function App() {
@@ -13,6 +17,12 @@ function App() {
           className="bg-sky-400 rounded-lg p-2 mr-10"
         >
           Increment
+        </button>
+        <button
+          onClick={() => dispatch(incrementByAmount(5))}
+          className="bg-sky-400 rounded-lg p-2 mr-10"
+        >
+          Increment By
         </button>
         <button
           onClick={() => dispatch(decrement())}
