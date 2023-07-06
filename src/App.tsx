@@ -3,11 +3,14 @@ import {
   increment,
   incrementByAmount,
 } from "./redux/feature/counter/CounterSlice";
-import { RootState } from "./redux/store";
-import { useSelector, useDispatch } from "react-redux";
+import { useAppDispatch, useAppSelector } from "./redux/hook";
+// import { RootState } from "./redux/store";
+// import { useSelector, useDispatch } from "react-redux";
 function App() {
-  const { count } = useSelector((state: RootState) => state.counter);
-  const dispatch = useDispatch();
+  // const { count } = useSelector((state: RootState) => state.counter);
+  // const dispatch = useDispatch();
+  const { count } = useAppSelector((state) => state.counter);
+  const dispatch = useAppDispatch();
   return (
     <div className="text-center">
       <div className=" m-10 text-5xl">{count}</div>
