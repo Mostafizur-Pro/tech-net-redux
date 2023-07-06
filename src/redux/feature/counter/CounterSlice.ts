@@ -16,3 +16,5 @@ const couterSlice = createSlice({
     },
   },
 });
+
+export default couterSlice.reducer;
